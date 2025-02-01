@@ -1,0 +1,95 @@
+/* General WooCommerce Product Grid Layout */
+.woocommerce ul.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px; /* Space between products */
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+/* Product Container */
+.woocommerce ul.products li.product {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  padding: 15px;
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease-in-out;
+  text-align: center;
+}
+
+.woocommerce ul.products li.product:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Hover effect */
+}
+
+/* Product Image Alignment */
+.woocommerce ul.products li.product img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  max-height: 300px; /* Ensure images don't exceed this height */
+  border-radius: 8px;
+}
+
+/* Product Title Styling */
+.woocommerce ul.products li.product h2 {
+  font-size: 18px;
+  margin-top: 15px;
+  color: #333;
+  font-weight: bold;
+  line-height: 1.3;
+  height: 50px; /* Fixed height for uniformity */
+  overflow: hidden;
+}
+
+/* Price Styling */
+.woocommerce ul.products li.product .price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #e74c3c;
+  margin-top: 10px;
+}
+
+/* Button Styling (Add to Cart) */
+.woocommerce ul.products li.product .button {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.woocommerce ul.products li.product .button:hover {
+  background-color: #2980b9;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .woocommerce ul.products {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust grid on smaller screens */
+  }
+
+  .woocommerce ul.products li.product {
+    padding: 10px;
+  }
+
+  .woocommerce ul.products li.product h2 {
+    font-size: 16px;
+    height: 40px;
+  }
+
+  .woocommerce ul.products li.product .price {
+    font-size: 14px;
+  }
+
+  .woocommerce ul.products li.product .button {
+    padding: 8px 16px;
+  }
+}
